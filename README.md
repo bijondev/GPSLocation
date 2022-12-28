@@ -4,12 +4,13 @@ Android get Latitude and Longitude sample
 To get the latitude and longitude of the device's current location in an Android app, you can use the Location API provided by Google Play Services. Here is an example of how to do this:
 
     Add the following permissions to your app's AndroidManifest.xml file:
-
+```
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
+```
     Create a LocationRequest object and set the desired parameters, such as the desired update interval:
 
+```
 LocationRequest locationRequest = new LocationRequest();
 locationRequest.setInterval(10000);
 locationRequest.setFastestInterval(5000);
@@ -51,9 +52,10 @@ task.addOnFailureListener(this, new OnFailureListener() {
         }
     }
 });
-
+```
     If the location settings are satisfied, you can request the device's current location:
 
+```
 FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 fusedLocationClient.getLastLocation()
         .addOnSuccessListener(this, new OnSuccessListener<Location>() {
@@ -66,5 +68,5 @@ fusedLocationClient.getLastLocation()
                 }
             }
         });
-
+```
 I hope this helps give you an idea of how to get the latitude and longitude of the device's current location in an Android app! Let me know if you have any questions.
